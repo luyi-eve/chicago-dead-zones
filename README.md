@@ -4,6 +4,6 @@ This repository includes the data I pulled from [Antenna Search](https://www.ant
 
 The tools I used for this mapping project are 👉 Mapbox + QGIS 👈. 
 - Mapbox is used to display every registered cell tower🗼in the city of Chicago (T-mobile towers are highlighted for the narrative).
-- QGIS is used to process a large GeoJSON file downloaded from Chicago Data Portal of its current building Footprints 🏙️.
+- QGIS is used to process a large GeoJSON file downloaded from Chicago Data Portal of its current building Footprints 🏙️. 
 
 About data folder: You can find raw data I pulled from the webpages along with a clean version I edited after so here.
