@@ -1,3 +1,9 @@
 
- .DS_Store
- 
+.DS_Store
+ai2html/
+building footprints/
+QGIS/
+T-mobile coverage/
+Chicago Dead Zone Proposal.docx
+re-towers chicago.csv
+chicago_cell_towers-scrape_with_selenium.ipynb
