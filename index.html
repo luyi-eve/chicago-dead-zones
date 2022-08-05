@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chicago Dead Zone</title>
+        <link rel="icon" href="signal.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant Garamond">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Serif Display">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+        
+
+        <!--This is for icons button-->
+        <script src="https://kit.fontawesome.com/a2143a8170.js" crossorigin="anonymous"></script>
+        
+        <!--BG Color -->
+        <style>
+            .bg-color {
+             background-color: #F1EEE9;
+             color: rgb(41, 41, 41);
+             /*background-color: rgb(27, 15, 52);*/
+             /*color: rgb(254, 253, 253);*/
+            }
+         </style>
+
+        <!--Text Style-->
+        <style>
+            h1.headline {
+                font-family: DM Serif Display;
+                font-size: 4rem;
+                font-weight: 800px;
+                line-height: 1em;
+                text-align:center;
+                color: #15133C;
+                margin-bottom: 15px;
+                margin-top: 5px;
+            }
+
+            h2.subhead {
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 2em;
+                text-align:center;
+                color: rgb(41, 41, 41);
+                margin-bottom:0px;
+                margin-top: 30px;
+            }
+
+            .byline {
+                font-size: 1.1rem;
+                line-height: 0.75em;
+                font-weight: 600px;
+                margin-top: 18px;
+                text-align:center;
+                color: rgb(41, 41, 41);;
+            }
+            
+            .date {
+                font-size: 1rem;
+                line-height: 1em;
+                font-weight:600px;
+                letter-spacing:0.5px;
+                margin-top: 18px;
+                text-align:center;
+                color: rgb(41, 41, 41);;
+            }
+
+            h2.title {
+                font-family: DM Serif Display;
+                font-size: 28px;
+                font-weight: 400px;
+                line-height: 2em;
+                letter-spacing: 1.5px;
+                text-align:center;
+                color: #EC994B;
+                padding-top:20px;
+
+            }
+
+            h2.subtitle {
+                font-family: DM Serif Display;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 2em;
+                text-align:center;
+                color: rgb(41, 41, 41);;
+                margin-bottom:10px;
+            }
+
+            p.body-text {
+                font-size: 1.15rem;
+                line-height: 1.8em;
+                text-align:justify;
+                margin-top:0px;
+                margin-bottom:15px;
+            }
+
+            p.caption {
+                font-family: Cormorant Garamond;
+                font-size: 1.1rem;
+                line-height: 1.4em;
+                text-align:center;
+                padding-top: 5px;
+                padding-bottom: 20px;
+            }
+
+            li  {
+                font-size: 1.1rem;
+                line-height: 1.8em;
+                text-align:justify;
+                margin-top:0px;
+                margin-bottom:0px;
+            }
+
+            .findcode {
+                font-family: Cormorant Garamond;
+                font-size: 1.1rem;
+                line-height: 1.4em;
+                text-align:center;
+                margin-top:0;
+                margin-bottom:15px;
+            }
+
+        </style>
+
+        <!--Page Size-->
+        <style>
+            .header {
+                margin:auto;
+                max-width: 750px;
+                padding-top:80px;
+                padding-bottom:20px;
+            }
+
+            .story-body {
+                margin:auto;
+                max-width: 780px;
+            }
+
+            .bulletpoint {
+                margin:auto;
+                max-width: 700px;
+            }
+
+            .footer {
+                margin:auto;
+                max-width: 750px;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+
+            .ending {
+                padding-top:0px;
+                padding-bottom:80px;
+                text-align:center;
+            }
+
+        </style>
+
+        <!--Chart Size-->
+        <style>
+            .scrolling-chart {
+                margin:auto;
+                max-width: 1200px;
+            }
+            .vertical-chart {
+                width:100%;
+                max-width:400px;
+                max-height:1000px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            
+            .horizontal-chart {
+                margin:auto;
+                max-width: 780px;
+            }
+
+        </style>
+
+        <!--Photo Style--> 
+        <style>
+            img {
+                width: 700px;
+                text-align: center;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+
+            .tmobile {
+                width: 550px;
+                text-align: center;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+
+            .footprint {
+                width: 550px;
+                text-align: center;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+            
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+        <!-- icon style-->
+        <style>
+            i.padding {padding-left: 30px;}
+            i.transparency {opacity: 1;}
+        </style>
+
+        <!--ai2html style-->
+        <style>
+            .ai2html-container {
+                font-family: Source Code Pro;
+                font-size: 2rem;
+                font-weight: 800px;
+                line-height: 1em;
+            }
+
+            #scrolly {
+              position: relative;
+              padding: 1rem;
+            }
+      
+            .scrolly-overlay {
+              position: relative;
+              padding: 0;
+              max-width: 60rem;
+              margin: 0 auto;
+            }
+      
+            .sticky-thing {
+              position: -webkit-sticky;
+              position: sticky;
+              left: 0;
+              width: 100%;
+              margin: 0;
+              z-index: 0;
+              top: 0;
+              height: 100vh;
+              /* Center everything inside */
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              justify-content: center;
+            }
+      
+            .step {
+              margin: 0 auto 2rem auto;
+              margin-bottom: 25rem;
+              /*background-color: #eee;*/
+              /*background-color: #fff;*/
+              color: black;
+            }
+      
+            .step p {
+              text-align: center;
+              padding: 1rem;
+              font-size: 1rem;
+            }
+      
+            .hidden { visibility: hidden; }
+      
+            /* When it's less than 700 pixels wide, do normal scrollytelling */
+            @media only screen and (min-width: 700px) {
+              #scrolly.side-by-side {
+                display: flex;
+              }
+      
+              #scrolly.side-by-side > div {
+                flex-basis: 1;
+                flex-grow: 1;
+                flex-shrink: 1;
+                padding: 0.75em;
+              }
+      
+              #scrolly.side-by-side .scrolly-overlay {
+                margin-top: 70vh;
+                order: 0;
+                /* Change these to adjust sizing options */
+                min-width: 15rem;
+                max-width: 22rem;
+              }
+      
+              #scrolly.side-by-side .sticky-thing {
+                order: 1;
+                flex-grow: 2;
+              }
+            }
+        </style>
+        <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    </head>
+
+
+    <body class="bg-color">
+        <div class="header">
+            <h1 class="headline"> Chicago's Dead Zones </h1>
+            <h2 class="subhead">🚫 Welcome Welcome Welcome 📶</h2>
+            <p class="byline">By Eve Lu</p>
+            <p class="date">August 3, 2022</p>
+        </div>
+        <div class="story-body">
+            <p class="body-text">
+                The most undisputed fact about Chicago is its prominent skyscrapers in a variety of styles, which reflect the city's history and its multicultural heritage. I was traveling to the city last week and went on a fantastic architecture boat tour with my friends. Everything around the water was pleasing on the eyes though the wind was a bit rude and I was told by my tour guide the windiest cities were actually scattered in states of Kanas and Texas instead of Illinois (doubt it but respect his knowledge:))             
+            </p>
+            
+            <p class="body-text">
+                When you walk along the Chicago River that runs through the city, you will not only be fascinated by the shining reflection of buildings in the lake under the sunlight but then realize…ah, you just walk into a dead zone 🎉 Yes, you check your signal bar on phone, and it says:'oops, no service available.'
+            </p>
+            <p class="body-text">
+                My cell is connected to T-Mobile service network, and it worked fairly well when I was in NYC or traveling to other major cities in the United States. So I was surprised when my cellular network was broken while I was just literally sitting in a random Starbuck on its first floor. This wasn't a one-time thing. It actually happened all the time during my five-day little trip wherever I went. I felt so lost every time I 'accidentally' stepped into a dead zone and all of sudden my google map just stopped working with me.            
+            </p>
+            <p class="body-text">
+                I remember one time I was sitting at the hotel lobby, waiting for a uber but then got a call from the driver asking me where exactly I was. I was confused and a bit irritated until I saw myself being placed right in the middle of the river on the map near the hotel, which was insanely located by the APP (but I am assuming this might be mainly related to signal blockage due to the clustered buildings around). I also experienced a few awkward moments when I was trying to show my online tickets but with the page forever loading just because of the weak and inconsistent cellular network.            
+            </p>
+            <p class="body-text">
+                Though after everything I still had a really great time there, I'm wondering if those places I went to are covered by 5G or 4G network and how many cell towers and antennas are there? 
+            </p>
+        </div>
+        <div class="scrolling-chart">
+            <section id="scrolly">
+                <div class="sticky-thing">
+                    <div class="ai2html-container">
+                    <!-- ai2html goes below this line --> 
+                    
+                    <!-- Generated by ai2html v0.111.0 - 2022-08-04 13:03 -->
+                    <!-- ai file: 7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb.ai -->
+                    <style media="screen,print">
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box ,
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box .g-artboard {
+                            margin:0 auto;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box p {
+                            margin:0;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box .g-aiAbs {
+                            position:absolute;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box .g-aiImg {
+                            position:absolute;
+                            top:0;
+                            display:block;
+                            width:100% !important;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box .g-aiSymbol {
+                            position: absolute;
+                            box-sizing: border-box;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box .g-aiPointText p { white-space: nowrap; }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1 {
+                            position:relative;
+                            overflow:hidden;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1 p {
+                            font-weight:500;
+                            line-height:14px;
+                            opacity:1;
+                            letter-spacing:0em;
+                            font-size:12px;
+                            text-align:left;
+                            color:rgb(0,0,0);
+                            text-transform:none;
+                            padding-bottom:0;
+                            padding-top:0;
+                            mix-blend-mode:normal;
+                            font-style:normal;
+                            height:auto;
+                            position:static;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1 .g-pstyle0 {
+                            line-height:17px;
+                            height:17px;
+                            font-size:14px;
+                        }
+                        #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1 .g-pstyle1 {
+                            line-height:17px;
+                            font-size:14px;
+                            text-align:right;
+                        }
+
+                    </style>
+
+                    <div id="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-box" class="ai2html">
+
+                        <!-- Artboard: Artboard_1 -->
+                        <div id="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1" class="g-artboard" style="max-width: 600px;max-height: 553px" data-aspect-ratio="1.085" data-min-width="0">
+                    <div style="padding: 0 0 92.1667% 0;"></div>
+                            <img id="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-img" class="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-img g-aiImg" alt="" src="7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1.jpg"/>
+                    <!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg class="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img g-aiImg" version="1.2" baseProfile="tiny" id="g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" viewBox="0 0 600 553" overflow="visible" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path id="spot-4" data-name="spot-4" fill="#1D81A2" d="M225.243,259.212h13.496
+                                c0.14,0,0.257,0.051,0.35,0.154c0.093,0.103,0.145,0.219,0.154,0.35v3.5h-2.002v-2.002h-11.998v2.002h-2.002v-9.492
+                                c0-0.14,0.051-0.261,0.154-0.364c0.103-0.103,0.219-0.149,0.35-0.14h0.994c0.14,0,0.257,0.047,0.35,0.14
+                                c0.093,0.093,0.145,0.215,0.154,0.364V259.212z M229.737,256.72c0-0.551-0.196-1.022-0.588-1.414s-0.863-0.588-1.414-0.588
+                                c-0.551,0-1.022,0.196-1.414,0.588s-0.583,0.863-0.574,1.414c0.009,0.551,0.201,1.022,0.574,1.414s0.845,0.588,1.414,0.588
+                                s1.041-0.196,1.414-0.588C229.522,257.742,229.718,257.27,229.737,256.72z M239.243,258.722v-0.504
+                                c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868h-5.502c-0.14,0-0.257,0.047-0.35,0.14
+                                c-0.093,0.093-0.145,0.21-0.154,0.35v3.01H239.243z"/>
+                            <path id="spot-5" data-name="spot-5" fill="#333333" d="M254.223,284.213
+                                c0,0.551-0.191,1.022-0.574,1.414c-0.383,0.392-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588
+                                c-0.383-0.392-0.579-0.863-0.588-1.414c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588
+                                S254.241,283.662,254.223,284.213z M255.231,284.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868
+                                c-0.821,0.009-1.531,0.299-2.128,0.868s-0.891,1.279-0.882,2.128c0.009,0.849,0.303,1.554,0.882,2.114
+                                c0.579,0.56,1.288,0.854,2.128,0.882c0.84,0.028,1.545-0.266,2.114-0.882S255.212,285.006,255.231,284.213z M256.225,284.213
+                                c0,1.101-0.387,2.044-1.162,2.828c-0.775,0.784-1.717,1.176-2.828,1.176s-2.053-0.392-2.828-1.176
+                                c-0.775-0.784-1.167-1.727-1.176-2.828c-0.009-1.101,0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176
+                                S256.243,283.112,256.225,284.213z M257.233,284.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596
+                                s-0.971-0.803-1.596-1.064c-0.625-0.261-1.269-0.392-1.932-0.392c-0.663,0-1.311,0.131-1.946,0.392
+                                c-0.635,0.261-1.167,0.616-1.596,1.064c-0.429,0.448-0.784,0.98-1.064,1.596s-0.415,1.265-0.406,1.946
+                                c0.009,0.681,0.145,1.33,0.406,1.946s0.616,1.143,1.064,1.582s0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392
+                                s1.325-0.149,1.932-0.392c0.607-0.243,1.139-0.602,1.596-1.078c0.457-0.476,0.812-1.003,1.064-1.582
+                                C257.079,285.58,257.214,284.932,257.233,284.213z M258.227,284.213c0,1.092-0.266,2.095-0.798,3.01
+                                c-0.532,0.915-1.26,1.643-2.184,2.184c-0.924,0.541-1.927,0.812-3.01,0.812c-1.083,0-2.091-0.271-3.024-0.812
+                                c-0.933-0.541-1.657-1.269-2.17-2.184s-0.784-1.918-0.812-3.01c-0.028-1.092,0.243-2.095,0.812-3.01s1.293-1.643,2.17-2.184
+                                c0.877-0.541,1.885-0.812,3.024-0.812s2.142,0.271,3.01,0.812c0.868,0.541,1.596,1.269,2.184,2.184
+                                S258.283,283.121,258.227,284.213z"/>
+                            <path id="spot-2" data-name="spot-2" fill="#333333" d="M242.223,191.213
+                                c0,0.551-0.191,1.022-0.574,1.414c-0.383,0.392-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588
+                                c-0.383-0.392-0.579-0.863-0.588-1.414c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588
+                                S242.241,190.662,242.223,191.213z M243.231,191.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868
+                                c-0.821,0.009-1.531,0.299-2.128,0.868c-0.597,0.569-0.891,1.279-0.882,2.128c0.009,0.849,0.303,1.554,0.882,2.114
+                                c0.579,0.56,1.288,0.854,2.128,0.882s1.545-0.266,2.114-0.882S243.212,192.006,243.231,191.213z M244.225,191.213
+                                c0,1.101-0.387,2.044-1.162,2.828c-0.775,0.784-1.717,1.176-2.828,1.176s-2.053-0.392-2.828-1.176s-1.167-1.727-1.176-2.828
+                                c-0.009-1.101,0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176S244.243,190.112,244.225,191.213z
+                                M245.233,191.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596c-0.439-0.448-0.971-0.803-1.596-1.064
+                                c-0.625-0.261-1.269-0.392-1.932-0.392c-0.663,0-1.311,0.131-1.946,0.392c-0.635,0.261-1.167,0.616-1.596,1.064
+                                c-0.429,0.448-0.784,0.98-1.064,1.596s-0.415,1.265-0.406,1.946c0.009,0.681,0.145,1.33,0.406,1.946s0.616,1.143,1.064,1.582
+                                c0.448,0.439,0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392s1.325-0.149,1.932-0.392c0.607-0.243,1.139-0.602,1.596-1.078
+                                s0.812-1.003,1.064-1.582C245.079,192.58,245.214,191.932,245.233,191.213z M246.227,191.213c0,1.092-0.266,2.095-0.798,3.01
+                                c-0.532,0.915-1.26,1.643-2.184,2.184s-1.927,0.812-3.01,0.812c-1.083,0-2.091-0.271-3.024-0.812s-1.657-1.269-2.17-2.184
+                                c-0.513-0.915-0.784-1.918-0.812-3.01s0.243-2.095,0.812-3.01c0.569-0.915,1.293-1.643,2.17-2.184s1.885-0.812,3.024-0.812
+                                s2.142,0.271,3.01,0.812s1.596,1.269,2.184,2.184C246.017,189.118,246.283,190.121,246.227,191.213z"/>
+                            <path id="spot-1" data-name="spot-1" fill="#333333" d="M254.223,145.213
+                                c0,0.551-0.191,1.022-0.574,1.414c-0.383,0.392-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588
+                                c-0.383-0.392-0.579-0.863-0.588-1.414c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588
+                                S254.241,144.662,254.223,145.213z M255.231,145.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868
+                                c-0.821,0.009-1.531,0.299-2.128,0.868c-0.597,0.569-0.891,1.279-0.882,2.128c0.009,0.849,0.303,1.554,0.882,2.114
+                                c0.579,0.56,1.288,0.854,2.128,0.882s1.545-0.266,2.114-0.882S255.212,146.006,255.231,145.213z M256.225,145.213
+                                c0,1.101-0.387,2.044-1.162,2.828c-0.775,0.784-1.717,1.176-2.828,1.176s-2.053-0.392-2.828-1.176s-1.167-1.727-1.176-2.828
+                                c-0.009-1.101,0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176S256.243,144.112,256.225,145.213z
+                                M257.233,145.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596c-0.439-0.448-0.971-0.803-1.596-1.064
+                                c-0.625-0.261-1.269-0.392-1.932-0.392c-0.663,0-1.311,0.131-1.946,0.392c-0.635,0.261-1.167,0.616-1.596,1.064
+                                c-0.429,0.448-0.784,0.98-1.064,1.596s-0.415,1.265-0.406,1.946c0.009,0.681,0.145,1.33,0.406,1.946s0.616,1.143,1.064,1.582
+                                c0.448,0.439,0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392s1.325-0.149,1.932-0.392c0.607-0.243,1.139-0.602,1.596-1.078
+                                c0.457-0.476,0.812-1.003,1.064-1.582C257.079,146.58,257.214,145.932,257.233,145.213z M258.227,145.213
+                                c0,1.092-0.266,2.095-0.798,3.01c-0.532,0.915-1.26,1.643-2.184,2.184s-1.927,0.812-3.01,0.812c-1.083,0-2.091-0.271-3.024-0.812
+                                s-1.657-1.269-2.17-2.184c-0.513-0.915-0.784-1.918-0.812-3.01s0.243-2.095,0.812-3.01c0.569-0.915,1.293-1.643,2.17-2.184
+                                s1.885-0.812,3.024-0.812s2.142,0.271,3.01,0.812s1.596,1.269,2.184,2.184C258.017,143.118,258.283,144.121,258.227,145.213z"/>
+                            <path id="spot-7" data-name="spot-7" fill="#333333" d="M298.223,468.213
+                                c0,0.551-0.191,1.022-0.574,1.414c-0.383,0.392-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588
+                                c-0.383-0.392-0.579-0.863-0.588-1.414c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588
+                                S298.241,467.662,298.223,468.213z M299.231,468.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868
+                                c-0.821,0.009-1.531,0.299-2.128,0.868c-0.597,0.569-0.891,1.279-0.882,2.128c0.009,0.849,0.303,1.554,0.882,2.114
+                                c0.579,0.56,1.288,0.854,2.128,0.882c0.84,0.028,1.545-0.266,2.114-0.882C298.918,469.711,299.212,469.006,299.231,468.213z
+                                M300.225,468.213c0,1.101-0.387,2.044-1.162,2.828c-0.775,0.784-1.717,1.176-2.828,1.176s-2.053-0.392-2.828-1.176
+                                c-0.775-0.784-1.167-1.727-1.176-2.828c-0.009-1.101,0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176
+                                S300.243,467.112,300.225,468.213z M301.233,468.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596
+                                c-0.439-0.448-0.971-0.803-1.596-1.064s-1.269-0.392-1.932-0.392s-1.311,0.131-1.946,0.392c-0.635,0.261-1.167,0.616-1.596,1.064
+                                c-0.429,0.448-0.784,0.98-1.064,1.596c-0.28,0.616-0.415,1.265-0.406,1.946c0.009,0.681,0.145,1.33,0.406,1.946
+                                c0.261,0.616,0.616,1.143,1.064,1.582s0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392s1.325-0.149,1.932-0.392
+                                c0.607-0.243,1.139-0.602,1.596-1.078c0.457-0.476,0.812-1.003,1.064-1.582C301.079,469.58,301.214,468.932,301.233,468.213z
+                                M302.227,468.213c0,1.092-0.266,2.095-0.798,3.01c-0.532,0.915-1.26,1.643-2.184,2.184c-0.924,0.541-1.927,0.812-3.01,0.812
+                                s-2.091-0.271-3.024-0.812c-0.933-0.541-1.657-1.269-2.17-2.184s-0.784-1.918-0.812-3.01c-0.028-1.092,0.243-2.095,0.812-3.01
+                                s1.293-1.643,2.17-2.184c0.877-0.541,1.885-0.812,3.024-0.812s2.142,0.271,3.01,0.812c0.868,0.541,1.596,1.269,2.184,2.184
+                                S302.283,467.121,302.227,468.213z"/>
+                            <path id="spot-6" data-name="spot-6" fill="#333333" d="M374.223,467.213
+                                c0,0.551-0.191,1.022-0.574,1.414c-0.383,0.392-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588
+                                c-0.383-0.392-0.579-0.863-0.588-1.414c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588
+                                S374.241,466.662,374.223,467.213z M375.231,467.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868
+                                c-0.821,0.009-1.531,0.299-2.128,0.868c-0.597,0.569-0.891,1.279-0.882,2.128c0.009,0.849,0.303,1.554,0.882,2.114
+                                c0.579,0.56,1.288,0.854,2.128,0.882c0.84,0.028,1.545-0.266,2.114-0.882C374.918,468.711,375.212,468.006,375.231,467.213z
+                                M376.225,467.213c0,1.101-0.387,2.044-1.162,2.828c-0.775,0.784-1.717,1.176-2.828,1.176s-2.053-0.392-2.828-1.176
+                                c-0.775-0.784-1.167-1.727-1.176-2.828c-0.009-1.101,0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176
+                                S376.243,466.112,376.225,467.213z M377.233,467.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596
+                                c-0.439-0.448-0.971-0.803-1.596-1.064s-1.269-0.392-1.932-0.392s-1.311,0.131-1.946,0.392c-0.635,0.261-1.167,0.616-1.596,1.064
+                                c-0.429,0.448-0.784,0.98-1.064,1.596c-0.28,0.616-0.415,1.265-0.406,1.946c0.009,0.681,0.145,1.33,0.406,1.946
+                                c0.261,0.616,0.616,1.143,1.064,1.582s0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392s1.325-0.149,1.932-0.392
+                                c0.607-0.243,1.139-0.602,1.596-1.078c0.457-0.476,0.812-1.003,1.064-1.582C377.079,468.58,377.214,467.932,377.233,467.213z
+                                M378.227,467.213c0,1.092-0.266,2.095-0.798,3.01c-0.532,0.915-1.26,1.643-2.184,2.184c-0.924,0.541-1.927,0.812-3.01,0.812
+                                s-2.091-0.271-3.024-0.812c-0.933-0.541-1.657-1.269-2.17-2.184s-0.784-1.918-0.812-3.01c-0.028-1.092,0.243-2.095,0.812-3.01
+                                s1.293-1.643,2.17-2.184c0.877-0.541,1.885-0.812,3.024-0.812s2.142,0.271,3.01,0.812c0.868,0.541,1.596,1.269,2.184,2.184
+                                S378.283,466.121,378.227,467.213z"/>
+                            <path id="spot-3" data-name="spot-3" fill="#333333" d="M391.223,214.213
+                                c0,0.551-0.191,1.022-0.574,1.414s-0.854,0.588-1.414,0.588s-1.031-0.196-1.414-0.588s-0.579-0.863-0.588-1.414
+                                c-0.009-0.551,0.187-1.022,0.588-1.414s0.873-0.588,1.414-0.588s1.013,0.196,1.414,0.588S391.241,213.662,391.223,214.213z
+                                M392.231,214.213c0-0.831-0.294-1.54-0.882-2.128c-0.588-0.588-1.293-0.877-2.114-0.868c-0.821,0.009-1.531,0.299-2.128,0.868
+                                c-0.597,0.569-0.891,1.279-0.882,2.128s0.303,1.554,0.882,2.114c0.579,0.56,1.288,0.854,2.128,0.882s1.545-0.266,2.114-0.882
+                                C391.918,215.711,392.212,215.006,392.231,214.213z M393.225,214.213c0,1.101-0.387,2.044-1.162,2.828s-1.717,1.176-2.828,1.176
+                                s-2.053-0.392-2.828-1.176s-1.167-1.727-1.176-2.828s0.383-2.044,1.176-2.828s1.736-1.176,2.828-1.176s2.035,0.392,2.828,1.176
+                                S393.243,213.112,393.225,214.213z M394.233,214.213c0-0.681-0.135-1.33-0.406-1.946c-0.271-0.616-0.625-1.148-1.064-1.596
+                                c-0.439-0.448-0.971-0.803-1.596-1.064s-1.269-0.392-1.932-0.392s-1.311,0.131-1.946,0.392c-0.635,0.261-1.167,0.616-1.596,1.064
+                                c-0.429,0.448-0.784,0.98-1.064,1.596c-0.28,0.616-0.415,1.265-0.406,1.946s0.145,1.33,0.406,1.946
+                                c0.261,0.616,0.616,1.143,1.064,1.582c0.448,0.439,0.98,0.798,1.596,1.078s1.265,0.411,1.946,0.392s1.325-0.149,1.932-0.392
+                                c0.607-0.243,1.139-0.602,1.596-1.078c0.457-0.476,0.812-1.003,1.064-1.582C394.079,215.58,394.214,214.932,394.233,214.213z
+                                M395.227,214.213c0,1.092-0.266,2.095-0.798,3.01c-0.532,0.915-1.26,1.643-2.184,2.184c-0.924,0.541-1.927,0.812-3.01,0.812
+                                s-2.091-0.271-3.024-0.812c-0.933-0.541-1.657-1.269-2.17-2.184c-0.513-0.915-0.784-1.918-0.812-3.01
+                                c-0.028-1.092,0.243-2.095,0.812-3.01c0.569-0.915,1.293-1.643,2.17-2.184c0.877-0.541,1.885-0.812,3.024-0.812
+                                s2.142,0.271,3.01,0.812c0.868,0.541,1.596,1.269,2.184,2.184C395.017,212.118,395.283,213.121,395.227,214.213z"/>
+                        </g>
+                        <g id="path-2" data-name="path-2">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M229.337,201.7c-23.883,18.376-43.635,12.61-56.685-7.971"/>
+                            <g>
+                                <polygon fill="#333333" points="226.711,201.488 229.082,201.848 228.721,204.219 229.88,203.365 230.241,200.995 
+                                    227.871,200.635 			"/>
+                            </g>
+                        </g>
+                        <g id="path-1" data-name="path-1">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M236.085,143.134c-20.406-1.731-39.81-22.527-36.038-44.32"/>
+                            <g>
+                                <polygon fill="#333333" points="234.293,141.185 235.795,143.055 233.924,144.556 235.355,144.712 237.225,143.211 
+                                    235.724,141.342 			"/>
+                            </g>
+                        </g>
+                        <g id="path-3" data-name="path-3">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M433.628,180.095c-0.623,15.84-14.139,28.475-30.751,28.475"/>
+                            <g>
+                                <polygon fill="#333333" points="431.793,181.994 433.575,180.389 435.179,182.171 435.254,180.734 433.65,178.952 
+                                    431.868,180.556 			"/>
+                            </g>
+                        </g>
+                        <g id="path-5" data-name="path-5">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M271.156,282.282c13.601,17.794,41.891,24.05,73.436,21.313"/>
+                            <g>
+                                <polygon fill="#333333" points="271.12,284.873 271.378,282.488 273.762,282.748 272.86,281.626 270.477,281.367 
+                                    270.218,283.751 			"/>
+                            </g>
+                        </g>
+                        <g id="path-4" data-name="path-4">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M249.808,260.82c9.118,14.64,30.784,19.334,48.579,10.815"/>
+                            <g>
+                                <polygon fill="#333333" points="249.507,263.392 250.007,261.047 252.352,261.548 251.569,260.34 249.225,259.84 
+                                    248.724,262.184 			"/>
+                            </g>
+                        </g>
+                        <g id="path-7" data-name="path-7">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M280.533,454.171c-20.131-1.404-32.258-13.088-35.544-28.113"/>
+                            <g>
+                                <polygon fill="#333333" points="278.694,452.288 280.243,454.119 278.411,455.667 279.845,455.787 281.676,454.239 
+                                    280.128,452.408 			"/>
+                            </g>
+                        </g>
+                        <g id="path-6" data-name="path-6">
+                            <path fill="none" stroke="#333333" stroke-miterlimit="10" d="M388.022,462.915c9.827,9.303,28.808,4.283,33.491-10.52"/>
+                            <g>
+                                <polygon fill="#333333" points="388.23,465.519 388.235,463.121 390.633,463.127 389.617,462.107 387.22,462.102 
+                                    387.215,464.499 			"/>
+                            </g>
+                        </g>
+                    </g>
+                    <style>
+                    #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img rect, #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img circle, #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img path, #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img line, #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img polyline, #g-7SVnD-where-i-ve-been-and-br-how-s-the-cell-network-there--rgb-Artboard_1-interactive-img polygon { vector-effect: non-scaling-stroke; }
+                    </style>
+                    </svg>
+
+                            <div id="text-1" class="g-interactive g-aiAbs" style="top:7.2333%;left:50.1116%;width:38%;">
+                                <p>I completly lost connection to the real world when I was at 360 Chicago Observation Deck but...somehow it is understandable because the observatory is on the 94th floor...(already in the air) </p>
+                            </div>
+                            <div id="text-2" class="g-interactive g-aiAbs" style="top:14.1049%;left:52.2358%;width:42.1667%;">
+                                <p>Sitting on the thrid floor to have a delicated Tiramisu but with a poor signal when I tried to post an instory for my cake!!!</p>
+                            </div>
+                            <div id="title-1" class="g-interactive g-aiAbs g-aiPointText" style="top:15.6212%;margin-top:-9.4px;left:24.1623%;width:100px;">
+                                <p class="g-pstyle0">360 Chicago</p>
+                            </div>
+                            <div id="title-2" class="g-interactive g-aiAbs" style="top:28.0289%;right:69.9219%;width:25.3333%;">
+                                <p class="g-pstyle1">Starbucks</p>
+                                <p class="g-pstyle1">Reserve Roastery</p>
+                            </div>
+                            <div id="title-3" class="g-interactive g-aiAbs g-aiPointText" style="top:29.7261%;margin-top:-9.4px;left:69.5179%;width:81px;">
+                                <p class="g-pstyle0">Navy Pier</p>
+                            </div>
+                            <div id="text-3" class="g-interactive g-aiAbs" style="top:36.1664%;left:73.8603%;width:22.1667%;">
+                                <p>Signal strength is of average here</p>
+                            </div>
+                            <div id="title-4" class="g-interactive g-aiAbs g-aiPointText" style="top:47.6284%;margin-top:-9.4px;left:50.4165%;width:147px;">
+                                <p class="g-pstyle0">Royal Sonesta Hotel</p>
+                            </div>
+                            <div id="text-6" class="g-interactive g-aiAbs" style="top:48.8246%;left:60.4975%;width:31.5%;">
+                                <p>I was totally isolated here...feeling so embrassed when the online tickets&rsquo;QR were forever loading and I ended up taking screenshots of all the tickets outside the planetarium and sneakily came back.</p>
+                            </div>
+                            <div id="text-4" class="g-interactive g-aiAbs" style="top:52.4412%;left:58.1222%;width:30.3333%;">
+                                <p>Where I stayed and where GPS had put me in the middle of the river nearby while waiting for a uber...</p>
+                            </div>
+                            <div id="title-5" class="g-interactive g-aiAbs" style="top:52.6221%;right:26.9613%;width:24%;">
+                                <p class="g-pstyle1">Wildberry </p>
+                                <p class="g-pstyle1">Pancakes and Cafe</p>
+                            </div>
+                            <div id="text-5" class="g-interactive g-aiAbs" style="top:65.0995%;left:62.3707%;width:32%;">
+                                <p>I was here for a fancy brunch but had been put on the waitlist for like 30 minutes. During that half an hour, I was able to get online on my phone, but the signal wasn&rsquo;t that strong enough so I had to refresh the pages or app every five minutes.</p>
+                            </div>
+                            <div id="text-7" class="g-interactive g-aiAbs" style="top:65.4611%;left:54.5482%;width:33.8333%;">
+                                <p>Signal strength was good at some points but I haven&rsquo;t checked every corner of the museum, so...</p>
+                            </div>
+                            <div id="title-7" class="g-interactive g-aiAbs g-aiPointText" style="top:75.2957%;margin-top:-9.4px;left:33.0116%;width:110px;">
+                                <p class="g-pstyle0">Field Museum</p>
+                            </div>
+                            <div id="title-6" class="g-interactive g-aiAbs g-aiPointText" style="top:79.4548%;margin-top:-9.4px;left:66.5869%;width:133px;">
+                                <p class="g-pstyle0">Adler Planetarium</p>
+                            </div>
+                        </div>
+
+                    <!-- Custom HTML -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+                    <style>
+                    .hidden { visibility: hidden; }
+                    </style>
+
+                    </div>
+                    <!-- End ai2html - 2022-08-04 13:03 -->
+
+                    <!-- ai2html goes above this line -->
+                    </div>
+                </div>
+                <div class="scrolly-overlay">
+                    <div class="step" id="step-zero">
+                        <!--no text appear at this step-->
+                    </div>
+                    <div class="step" id="step-one">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-two">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-three">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-four">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-five">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-six">
+                        <p></p>
+                    </div>
+                    <div class="step" id="step-seven">
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                /* Scrollytelling code goes under here */
+
+                d3.select("#text-1").classed("hidden",true)
+                d3.select("#text-2").classed("hidden",true)
+                d3.select("#text-3").classed("hidden",true)
+                d3.select("#text-4").classed("hidden",true)
+                d3.select("#text-5").classed("hidden",true)
+                d3.select("#text-6").classed("hidden",true)
+                d3.select("#text-7").classed("hidden",true)
+                d3.select("#path-1").classed("hidden",true)
+                d3.select("#path-2").classed("hidden",true)
+                d3.select("#path-3").classed("hidden",true)
+                d3.select("#path-4").classed("hidden",true)
+                d3.select("#path-5").classed("hidden",true)
+                d3.select("#path-6").classed("hidden",true)
+                d3.select("#path-7").classed("hidden",true)
+                d3.select("#title-1").classed("hidden",true)
+                d3.select("#title-2").classed("hidden",true)
+                d3.select("#title-3").classed("hidden",true)
+                d3.select("#title-4").classed("hidden",true)
+                d3.select("#title-5").classed("hidden",true)
+                d3.select("#title-6").classed("hidden",true)
+                d3.select("#title-7").classed("hidden",true)
+                d3.select("#spot-1").classed("hidden",true)
+                d3.select("#spot-2").classed("hidden",true)
+                d3.select("#spot-3").classed("hidden",true)
+                d3.select("#spot-4").classed("hidden",true)
+                d3.select("#spot-5").classed("hidden",true)
+                d3.select("#spot-6").classed("hidden",true)
+                d3.select("#spot-7").classed("hidden",true)
+
+                d3.select("#step-zero").on("stepin",function(e){
+                    console.log("Got to step zero")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                }) 
+
+                d3.select("#step-one").on("stepin",function(e){
+                    console.log("Got to step one")
+
+                    d3.select("#text-1").classed("hidden",false)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",false)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",false)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",false)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+                })
+
+                d3.select("#step-two").on("stepin",function(e){
+                    console.log("Got to step two")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",false)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",false)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",false)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",false)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                })
+
+                d3.select("#step-three").on("stepin",function(e){
+                    console.log("Got to step three")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",false)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",false)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",false)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",false)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                })
+
+                d3.select("#step-four").on("stepin",function(e){
+                    console.log("Got to step four")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",false)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",false)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",false)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",false)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                })
+
+                d3.select("#step-five").on("stepin",function(e){
+                    console.log("Got to step five")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",false)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",false)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",false)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",false)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                })
+
+                d3.select("#step-six").on("stepin",function(e){
+                    console.log("Got to step six")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",false)
+                    d3.select("#text-7").classed("hidden",true)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",false)
+                    d3.select("#path-7").classed("hidden",true)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",false)
+                    d3.select("#title-7").classed("hidden",true)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",false)
+                    d3.select("#spot-7").classed("hidden",true)
+
+                })
+
+                d3.select("#step-seven").on("stepin",function(e){
+                    console.log("Got to step seven")
+
+                    d3.select("#text-1").classed("hidden",true)
+                    d3.select("#text-2").classed("hidden",true)
+                    d3.select("#text-3").classed("hidden",true)
+                    d3.select("#text-4").classed("hidden",true)
+                    d3.select("#text-5").classed("hidden",true)
+                    d3.select("#text-6").classed("hidden",true)
+                    d3.select("#text-7").classed("hidden",false)
+
+                    d3.select("#path-1").classed("hidden",true)
+                    d3.select("#path-2").classed("hidden",true)
+                    d3.select("#path-3").classed("hidden",true)
+                    d3.select("#path-4").classed("hidden",true)
+                    d3.select("#path-5").classed("hidden",true)
+                    d3.select("#path-6").classed("hidden",true)
+                    d3.select("#path-7").classed("hidden",false)
+
+                    d3.select("#title-1").classed("hidden",true)
+                    d3.select("#title-2").classed("hidden",true)
+                    d3.select("#title-3").classed("hidden",true)
+                    d3.select("#title-4").classed("hidden",true)
+                    d3.select("#title-5").classed("hidden",true)
+                    d3.select("#title-6").classed("hidden",true)
+                    d3.select("#title-7").classed("hidden",false)
+
+                    d3.select("#spot-1").classed("hidden",true)
+                    d3.select("#spot-2").classed("hidden",true)
+                    d3.select("#spot-3").classed("hidden",true)
+                    d3.select("#spot-4").classed("hidden",true)
+                    d3.select("#spot-5").classed("hidden",true)
+                    d3.select("#spot-6").classed("hidden",true)
+                    d3.select("#spot-7").classed("hidden",false)
+
+                })
+                
+
+            </script>
+
+            <script>
+                const scroller = scrollama();
+
+                scroller
+                    .setup({
+                        step: "#scrolly .scrolly-overlay .step",
+                        offset: 0.5,
+                        debug: false
+                    })
+                    .onStepEnter(function({ element, index, direction}) {
+                        const event = new CustomEvent('stepin', { detail: { direction: direction } })
+                        element.dispatchEvent(event);
+                    })
+                    .onStepExit(function({ element, index, direction }) {
+                        const event = new CustomEvent('stepout', { detail: { direction: direction } })
+                        element.dispatchEvent(event);
+                    });
+
+                window.addEventListener("resize", scroller.resize);
+            </script>
+
+            <!-- ai2html resizer script -->
+            <script type="text/javascript">
+            (function() {
+                // only want one resizer on the page
+                if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+                document.documentElement.className += " g-resizer-v3-init";
+                // require IE9+
+                if (!("querySelector" in document)) return;
+                function resizer() {
+                    var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                        widthById = {};
+                    elements.forEach(function(el) {
+                        var parent = el.parentNode,
+                            width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                            minwidth = el.getAttribute("data-min-width"),
+                            maxwidth = el.getAttribute("data-max-width");
+                        widthById[parent.id] = width;
+
+                        if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                            el.style.display = "block";
+                        } else {
+                            el.style.display = "none";
+                        }
+                    });
+                    try {
+                        if (window.parent && window.parent.$) {
+                            window.parent.$("body").trigger("resizedcontent", [window]);
+                        }
+                        if (window.require) {
+                            require(['foundation/main'], function() {
+                                require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                                    AppCommunicator.triggerResize();
+                                });
+                            });
+                        }
+                    } catch(e) { console.log(e); }
+                }
+
+                document.addEventListener('DOMContentLoaded', resizer);
+                // feel free to replace throttle with _.throttle, if available
+                window.addEventListener('resize', throttle(resizer, 200));        
+
+                function throttle(func, wait) {
+                    // from underscore.js
+                    var _now = Date.now || function() { return new Date().getTime(); },
+                        context, args, result, timeout = null, previous = 0;
+                    var later = function() {
+                        previous = _now();
+                        timeout = null;
+                        result = func.apply(context, args);
+                        if (!timeout) context = args = null;
+                    };
+                    return function() {
+                        var now = _now(), remaining = wait - (now - previous);
+                        context = this;
+                        args = arguments;
+                        if (remaining <= 0 || remaining > wait) {
+                            if (timeout) {
+                                clearTimeout(timeout);
+                                timeout = null;
+                            }
+                            previous = now;
+                            result = func.apply(context, args);
+                            if (!timeout) context = args = null;
+                        } else if (!timeout && options.trailing !== false) {
+                            timeout = setTimeout(later, remaining);
+                        }
+                        return result;
+                    };
+                }
+                
+            })();
+            </script>
+        </div>
+        <div class="story-body">
+            <p class="body-text">
+                The map shows where I've been and how I generally felt about the cell's signal there. Though I know there might be tons of reasons to affect cellular signal strength, major explanations can be listed as below:   
+            </p>
+        </div>
+        <div class="bulletpoint">
+            <li>5G or 4G coverage network provided by your mobile carrier;</li>
+            <li>Thick material like concrete and steel that stop signal from penetrating a building (even glass is able to impair the singal strength!!);</li>
+            <li>And, your distance from a cell tower.</li>
+        </div>
+        <br>
+        <h2 class="title">Am I covered by 5G or 4G network?</h2>
+        <div class="story-body">
+            <p class="body-text">
+                On T-mobile's official website, click on <a href="https://www.t-mobile.com/coverage/coverage-map"> 5G & 4G Coverage map </a>, then you will get an highly saturated mulberry map which says their 5G (or at least 4G LTE) network is touching almost every corner of the country and of course 🧐 is including Chicago as a place with full 5G Ultra Capacity.                
+            </p>
+        </div>
+        <div class="story-body">
+            <img class="tmobile center" src="T-mobile coverage map.png" alt="A screenshot of T-mobile's 5G/4G coverage map in Chicago">
+            <p class="caption">A screenshot of T-mobile's 5G/4G coverage map in Chicago</p>
+        </div>
+        <div class="story-body">
+            <p class="body-text">
+                Uh...it seems like 5G Ultra Capacity actually means 'oops human, you won't be able to connect whenever and wherever you can even if our map shows Chicago is extremely red.'
+            </p>
+            <p class="body-text">
+                <strong>Note</strong>: I use T-mobile so I did a research on their service coverage map but you can easily find your mobile carrier's availability by typing something like "xxx 5G coverage map"💡
+            </p>
+        </div>
+        <h2 class="title">So, how many cell towers are nearby?</h2>
+        <div class="story-body">
+            <p class="body-text">
+                Data by <a href="https://www.antennasearch.com/HTML/search/search.php?address=Chicago%2C+IL%2C+United+States">Antenna Search</a>, Chicago has 42 registered cell towers in town. Below displays where those registered towers are scattered:
+            </p>
+        </div>
+        <br>
+        <div class="horizontal-chart">
+            <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/eseve/cl6fs17tr004l15s5w2kp2cje.html?title=false&access_token=pk.eyJ1IjoiZXNldmUiLCJhIjoiY2w1Mnl6a2ZxMGhldzNkb2Nhd2gzN3YwdyJ9.KzMPd6T2OYfAU7URHv2-WA&zoomwheel=false#13.62/41.87537/-87.63451/0/62" title="chicago-tower-map" style="border:none;"></iframe>
+        </div>
+        <br>
+        <p class="caption">
+            How Chicago's 42 registered cell towers are distrubuted
+            <br>
+            Source by <a href="https://www.antennasearch.com/HTML/search/search.php?address=Chicago%2C+IL%2C+United+States">Antenna Search</a>
+        </p>
+        <div class="story-body">
+            <p class="body-text">
+                Of 42 cell towers in total, 11 of them are owned by T-mobile. When you zoom in a little bit more, you will notice most of t-mobile towers are gathering in downtown area, however, being submerged by hundreds of high-rises at the same time.
+            </p>
+            <p class="body-text">
+                Normally, your phones allow you to be <a href="https://blog.solidsignal.com/tutorials/how-far-away-can-your-phone-be-from-the-tower/">1-2 miles away from a cell tower</a>. If we just look at the data, Chicagoans shouldn't have worry about their cell-phone signal strength at all?!🤔 (in case you want to know, Chicago actually has more than 430 non-registered cell towers and over 5000 antennas within a three mile radius of the city). 
+            </p>
+        </div>
+        <h2 class="title">But, why am I still being blocked by the city?</h2>
+        <h2 class="subtitle">Okay...so it must have something to do with the skycrapers🌃!!!</h2>
+        <div class>
+        <div class="story-body">
+            <p class="body-text">
+                It seems like cell network coverage is doing its excellent job and meanwhile the city has enough cell towers to back it up. In that case, I am assuming the major reason why I was being blocked might be related to a dense cluster of these outstanding skycrapers in the city.
+            </p>
+        </div>
+        
+        <div class="story-body">
+            <img class="footprint center" src="black-footprints.gif" alt="A screenshot of Chicago">
+                <p class="caption">
+                    Current building footprints in Chicago
+                    <br>
+                    Source by <a href="https://data.cityofchicago.org/Buildings/Building-Footprints-current-/hz9b-7nh8">Chicago Data Portal</a>; Map supported by QGIS
+                </p>
+        </div>
+        <div class="story-body">
+            <p class="body-text">
+                When you look at the map, the building footprints are compacted so closely and almost the entire city is loaded with thousands of constructed landmark buildings of varying styles. Dead zones can occur under various situations, however especially when large objects come between you and the cell tower, <a href="https://www.cbsnews.com/chicago/news/an-analysis-of-chicago-cell-phone-dead-zones/"> explained by the Federal Communications Commission (FCC)</a>.
+            </p>
+            <p class="body-text">
+                 Additionally, the materials used to build the high-rises also make a big difference in whether your cell reception would get killed or not. <a href="https://www.signalboosters.com/blog/building-materials-that-kill-your-cell-reception/"> Glass is said to refracts the signal causing a loss of about -4dB </a> (special designed glass for better privacy even makes it worse). Also, the more layers of materials, the more signal is block. Buildings out of concrete or cement will cause a loss of between -10dB and -20dB, which contributes to the major reason why your cell often has an extremely poor signal strength when you are at most underground places. 
+            </p>
+            <p class="body-text">
+                Well, I guess...this is probably the 'biggest' reason 🔍(?) why I was being blocked whenever and wherever I went... but I am not excluding other potential possiblities and will keep exploring 👀.
+            </p>
+        </div>
+        <br>
+
+    <footer class="bg-color">
+        <p></p>
+        <div class="findcode">
+            <p>If you' d like to check my code for this project, they are now available on <a href="url">GitHub</a>.</p>
+            <p>The original data can be found at <a href="https://www.antennasearch.com/HTML/search/search.php?address=Chicago%2C+IL%2C+United+States">Antenna Search</a> and <a href="https://data.cityofchicago.org/Buildings/Building-Footprints-current-/hz9b-7nh8">Chicago Data Portal</a>.</p>
+        </div>
+        <!--sometimes icon not showing up is because of subsription plan!-->
+        <div class="ending four-icon">
+            <a href="https://github.com/luyi-eve" title="Github" target="_blank"><span class="title"><i class="fab fa-github fa-2xs transparency"></i></span><a>
+            <a href="https://twitter.com/luyi_2021" title="Twitter" target="_blank"><span class="title"><i class="fab fa-twitter padding fa-2xs transparency"></i></span><a>
+            <a href="https://www.instagram.com/eseve__ly/" title="Instagram" target="_blank"><span class="title"><i class="fa-brands fa-instagram padding fa-2xs transparency"></i></span><a>
+            <a href="eseve@live.com" target="_top" title="E-mail"><span class="title"><i class="fas fa-envelope padding fa-2xs transparency"></i></span><a>
+        </div>
+    </footer>
+
